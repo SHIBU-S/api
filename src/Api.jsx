@@ -5,11 +5,17 @@ function Api()
 {
     const [result,setresult] = useState([]);
     const [inputvalue,setinputvalue] = useState("");
+    const [newdata,setnewdata] = useState({
+        Id : "",
+        Name : "",
+        Username : "",
+        Email : ""
+    });
 
     function fetchingdatas(){
         fetch("https://jsonplaceholder.typicode.com/users")
         .then((data)=> { return data.json() } )
-        .then((display)=> { setresult(display) })
+        .then((display)=> { setresult(display) }) 
     }
 
     useEffect(()=>{fetchingdatas()},[])
@@ -26,8 +32,15 @@ function Api()
 
     function filter(){
         const filteredvalue = inputvalue.toLowerCase();
-        const filter = result.filter((fil)=>fil.name.toLowerCase()===filteredvalue);
+        const filter = result.filter((fil)=>fil.name.toLowerCase()===filteredvalue || fil.id === Number(filteredvalue) || fil.email.toLowerCase() === filteredvalue);
         setresult(filter);
+    }
+
+    function adddetails(){
+        if(newdata.Id && newdata.Name && newdata.Username && newdata.Email)
+        {
+            setresult((previousresult)=>[...previousresult,{id : Number(newdata.Id),name : newdata.Name, username : newdata.Username, email : newdata.Email }]);
+        }
     }
 
     return(
@@ -62,6 +75,12 @@ function Api()
                     <button onClick={search}>Search</button>
                 Enter Value : <input type="text" onChange={(e)=>setinputvalue(e.target.value)} />
                     <button onClick={filter}>Filter</button>
+<br /><br />        
+                Enter ID : <input type="number" onChange={(e)=>setnewdata((previousdata)=>{return{...previousdata,Id:e.target.value}})}  />
+                Enter NAME : <input type="text" onChange={(e)=>setnewdata((previousdata)=>{return{...previousdata,Name:e.target.value}})} />
+                Enter USERNAME : <input type="text" onChange={(e)=>setnewdata((previousdata)=>{return{...previousdata,Username:e.target.value}})} />
+                Enter EMAIL : <input type="email"   onChange={(e)=>setnewdata((previousdata)=>{return{...previousdata,Email:e.target.value}})}/>
+                    <button onClick={adddetails}>Add Details</button>
             </div>
         </>
     )
