@@ -1,0 +1,53 @@
+[
+    {
+        "Department" : "Information Technology",
+        "EmployeeCode" : "1",
+        "EmployeeName" : "Shibu",
+        "salary" : "20,000"
+    },
+    {
+        "Department" : "Information Technology",
+        "EmployeeCode" : "2",
+        "EmployeeName" : "Jeeva",
+        "salary" : "25,000"
+    },
+
+    {
+        "Department" : "Digital Marketing",
+        "EmployeeCode" : "3",
+        "EmployeeName" : "Sibi",
+        "salary" : "30,000"
+    },
+    {
+        "Department" : "Commerce",
+        "EmployeeCode" : "4",
+        "EmployeeName" : "Kannan",
+        "salary" : "15,000"
+    },
+
+    {
+        "Department" : "Accounting",
+        "EmployeeCode" : "5",
+        "EmployeeName" : "Prakash",
+        "salary" : "32,000"
+    },
+    {
+        "Department" : "Digital Marketing",
+        "EmployeeCode" : "6",
+        "EmployeeName" : "Eniyan",
+        "salary" : "28,000"
+    },
+
+    {
+        "Department" : "Commerce",
+        "EmployeeCode" : "7",
+        "EmployeeName" : "Ravindar",
+        "salary" : "27,000"
+    },
+    {
+        "Department" : "Accounting",
+        "EmployeeCode" : "8",
+        "EmployeeName" : "Saravanakumar",
+        "salary" : "10,000"
+    }
+]
