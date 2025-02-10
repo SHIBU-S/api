@@ -11,3 +11,8 @@ th,td{
 th{
   background-color: #b2aec2;
 }
+
+.rdw-editor-main{
+  height: 350px;
+  border: 1px solid gray;
+}
